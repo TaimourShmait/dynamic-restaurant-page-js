@@ -8,20 +8,9 @@ function generateResponsivePage () {
     const responsiveContainer = document.createElement("div");
     responsiveContainer.id = "responsive-container";
 
-    // const buttonsContainer = document.createElement("div");
-    // buttonsContainer.id = "buttons-container-home-responsive";
-
-    // const contactButton = document.createElement("button");
-    // contactButton.textContent = "Contact";
-
-    // contactButton.addEventListener("click", goContact);
-      
-    // buttonsContainer.appendChild(contactButton);
-    
     const topContent = createLowerHalf();
 
     responsiveContainer.appendChild(topContent);
-    // responsiveContainer.appendChild(buttonsContainer);
 
     const menuSection = document.createElement("div");
     menuSection.id = "menu-section-responsive";
