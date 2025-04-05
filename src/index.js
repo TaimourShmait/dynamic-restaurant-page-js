@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check for width to generate a responsive page 
 
-    if (window.innerWidth >= 320 && window.innerWidth <= 480) {
+    if (window.innerWidth >= 320 && window.innerWidth <= 1024) {
         makeResponsive();
     }
 

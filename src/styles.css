@@ -473,7 +473,7 @@ main {
 
 /* Responsive Page Styles */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 1024px) {
 
     body, html {
         margin: 0;
