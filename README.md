@@ -2,6 +2,10 @@
 
 A dynamic restaurant page that utilizes the webpack bundling tool for dynamic content generation.
 
+## Live Preview
+You can view the live preview of the project here:  
+[Live Preview](https://taimourshmait.github.io/dynamic-restaurant-page-js/)
+
 ## Installation
 1. Clone this repository:  
    `git clone https://github.com/TaimourShmait/dynamic-restaurant-page-js.git`
@@ -17,4 +21,4 @@ A dynamic restaurant page that utilizes the webpack bundling tool for dynamic co
 ## Features
 - Dynamic content generation through JavaScript.
 - Utilizes webpack for bundling and optimization.
-- Basic responsiveness
+- Basic responsiveness.
