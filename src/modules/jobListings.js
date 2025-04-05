@@ -1,81 +1,77 @@
 import staffImageSrc from "../assets/staff-image.png"; 
 
-function createForm () {
+export function createForm () {
     const contentDiv = document.createElement("div");
-    contentDiv.style.cssText = "position: relative; width: 100%; height: 100%; background-color: #d70000; display: flex; flex-direction: column; align-items: center;";
+    contentDiv.id = "content-div-jobs";
 
     const staffImage = document.createElement("img");
     staffImage.src = staffImageSrc;
+    staffImage.id = "staff-image-jobs";
 
     contentDiv.appendChild(staffImage);
-    staffImage.style.cssText = "margin: 4rem 0; box-shadow: 0 0 1rem rgba(37, 37, 37, 0.5)";
 
     const applyDiv = document.createElement("div");
+    applyDiv.id = "apply-div-jobs";
     contentDiv.appendChild(applyDiv);
-    applyDiv.style.cssText = "width: 65%; display: flex; flex-direction: column; background-color: white; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 0 1rem rgba(37, 37, 37, 0.5); position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); z-index: 1;";
 
     const applyText = document.createElement("p");
+    applyText.id = "apply-text-jobs";
     applyText.innerHTML = "Interested in joining the Los Pollos Hermanos family?<br> We’d love to have you with us!";
     applyDiv.appendChild(applyText);
-    applyText.style.cssText = "font-size: 2.4rem; font-weight: bold; color: #164a97; margin-bottom: 0;";
 
     const applyButton = document.createElement("button");
+    applyButton.id = "apply-button-jobs";
     applyButton.innerText = "Apply Now!";
     applyDiv.appendChild(applyButton);
-    applyButton.style.cssText = "font-weight: bold; border: none; border: 3px solid rgb(4, 23, 52); border-radius: 0.5rem; background-color: #164a97; color: white; cursor: pointer; width: 25%; height: 3.5rem; font-size: 1.5rem; margin-top: 1.5rem;";
-    applyButton.id = "apply-button";
+
+    // Generate form content on button click
 
     applyButton.addEventListener("click", () => {
         applyDiv.remove();
 
         const formDiv = document.createElement("div");
-        formDiv.style.cssText = "width: 65%; display: flex; flex-direction: column; background-color: white; border-radius: 0.5rem; padding: 2rem; box-shadow: 0 0 1rem rgba(37, 37, 37, 0.5); position: absolute; top: 30.4%; left: 50%; transform: translate(-50%, -50%); z-index: 1;";
+        formDiv.id = "form-div-jobs";
         contentDiv.appendChild(formDiv);
 
         const applyForm = document.createElement("form");
+        applyForm.id = "apply-form-jobs";
         formDiv.appendChild(applyForm);
-        applyForm.style.cssText = "margin: 0; width: 100%; display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1;";
 
         const applyFormText = document.createElement("p");
+        applyFormText.id = "apply-form-text-jobs";
         applyFormText.innerText = "Job Application";
-        applyFormText.style.cssText = "margin: 0 0 1rem 0; color: #164a97; font-size: 2.4rem; font-weight: bold;";
         applyForm.appendChild(applyFormText);
 
         const nameFieldSet = document.createElement("fieldset");
-        nameFieldSet.style.cssText = "margin: 0; padding: 0; display: flex; gap: 1rem; border: none;";
+        nameFieldSet.id = "name-fieldset-jobs";
+        applyForm.appendChild(nameFieldSet);
 
         const nameInput = document.createElement("input");
+        nameInput.id = "name-input-jobs";
         nameInput.type = "text";
         nameInput.placeholder = "First Name";
-        const inputStyle = "padding: 0.5rem 0 0.5rem 0.5rem; width: 45%; border: 1px solid black;";
-        nameInput.style.cssText = inputStyle;
-        // applyForm.appendChild(nameInput);
 
         const lastNameInput = document.createElement("input");
+        lastNameInput.id = "last-name-input-jobs";
         lastNameInput.type = "text";
         lastNameInput.placeholder = "Last Name";
-        lastNameInput.style.cssText = inputStyle;
-        // applyForm.appendChild(lastNameInput);
 
         nameFieldSet.appendChild(nameInput);
         nameFieldSet.appendChild(lastNameInput);
-        applyForm.appendChild(nameFieldSet);
 
         const emailRoleFieldset = document.createElement("fieldset");
-        emailRoleFieldset.style.cssText = "margin: 0; padding: 0; display: flex; gap: 1rem; border: none;";
+        emailRoleFieldset.id = "email-role-fieldset-jobs";
         applyForm.appendChild(emailRoleFieldset);
 
         const emailInput = document.createElement("input");
+        emailInput.id = "email-input-jobs";
         emailInput.type = "email";
         emailInput.placeholder = "Email Address";
-        emailInput.style.cssText = inputStyle;
-        //applyForm.appendChild(emailInput);
         emailRoleFieldset.appendChild(emailInput);
 
         const roleSelect = document.createElement("select");
-        roleSelect.style.cssText = "padding: 0.5rem; width: 46.09%; border: 1px solid black;";
+        roleSelect.id = "role-select-jobs";
         emailRoleFieldset.appendChild(roleSelect);
-
 
         const option0 = document.createElement("option");
         option0.value = "";
@@ -98,19 +94,16 @@ function createForm () {
         roleSelect.appendChild(option3);
 
         const cvFieldset = document.createElement("fieldset");
-        cvFieldset.style.cssText = "margin: 0; padding: 0; display: flex; gap: 0.5rem; border: none;"
-
+        cvFieldset.id = "cv-fieldset-jobs";
         const cvPromptText = document.createElement("p");
+        cvPromptText.id = "cv-prompt-text-jobs";
         cvPromptText.innerText = "Upload your CV —";
-        cvPromptText.style.cssText = "font-size: 1rem; font-weight: none; margin: 0";
-
         const cvInput = document.createElement("input");
+        cvInput.id = "cv-input-jobs";
         cvInput.type = "file";
         cvInput.accept = ".pdf,.doc,.docx";
-        cvInput.style.cssText = "width: 20rem; margin: 0;";
         cvFieldset.appendChild(cvPromptText);
         cvFieldset.appendChild(cvInput);
-        
         applyForm.appendChild(cvFieldset);
 
         nameInput.required = true;
@@ -120,11 +113,10 @@ function createForm () {
         cvInput.required = true;
 
         const buttonsFieldset = document.createElement("fieldset");
-        buttonsFieldset.style.cssText = "margin: 0; padding: 0; border: none; display: flex; gap: 1rem;";
-
+        buttonsFieldset.id = "buttons-fieldset-jobs";
         const backButton = document.createElement("button");
+        backButton.id = "back-button-jobs";
         backButton.textContent = "Back";
-        backButton.style.cssText = "font-weight: bold; margin: 0; width: 5rem; padding: 0.4rem; border: 2px solid rgb(4, 23, 52); background-color: #164a97; color: white; cursor: pointer; border-radius: 0.5rem; ";
         buttonsFieldset.appendChild(backButton);
 
         backButton.addEventListener("click", () => {
@@ -133,29 +125,29 @@ function createForm () {
         });
 
         const submitFormButton = document.createElement("input");
+        submitFormButton.id = "submit-form-button-jobs";
         submitFormButton.type = "submit";
         submitFormButton.value = "Submit";
-        submitFormButton.style.cssText = "font-weight: bold; margin: 0; width: 5rem; padding: 0.4rem; border: 2px solid rgb(4, 23, 52); background-color: #164a97; color: white; cursor: pointer; border-radius: 0.5rem; ";
         buttonsFieldset.appendChild(submitFormButton);
+
+        // Add a dialog box when the form is submitted
 
         applyForm.addEventListener("submit", () => {
             event.preventDefault();
             const submitDialogBox = document.createElement("dialog");
-            submitDialogBox.style.cssText = "width: 50%; height: 10rem; border: 0.3rem solid #164a97; font-size: 2rem; display: flex; flex-direction: column;";
-
+            submitDialogBox.id = "submit-dialog-box-jobs";
             const dialogText = document.createElement("p");
+            dialogText.id = "dialog-text-jobs";
             dialogText.textContent = "Application submitted successfully!";
 
             const closeButton = document.createElement("button");
+            closeButton.id = "close-button-jobs";
             closeButton.textContent = "OK"; 
-            closeButton.style.cssText = "font-weight: bold; margin: 0 -1rem 0 0; width: 10rem; height: 2rem; padding: 0.4rem; border: 2px solid #164a97; background-color:rgb(255, 255, 255); color: #164a97; cursor: pointer; border-radius: 0.5rem; ";
-
             submitDialogBox.appendChild(dialogText);
             submitDialogBox.appendChild(closeButton);
 
             document.body.appendChild(submitDialogBox);
             submitDialogBox.showModal();
-            console.log(submitDialogBox);
 
             closeButton.addEventListener("click", () => {
                 submitDialogBox.remove();
@@ -175,7 +167,6 @@ function createForm () {
 export function goJobListings () {
     const main = document.querySelector("main");
     const contentDiv = createForm();
-
     main.innerHTML = "";
     main.appendChild(contentDiv);
 }
