@@ -21,4 +21,3 @@ You can view the live preview of the project here:
 ## Features
 - Dynamic content generation through JavaScript.
 - Utilizes webpack for bundling and optimization.
-- Basic responsiveness.
